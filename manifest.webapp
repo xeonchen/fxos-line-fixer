@@ -1,0 +1,28 @@
+{
+  "name": "fxos-line-fixer",
+  "description": "Fix LINE UI issue(s) in FxOS",
+  "developer": {
+    "name": "Liang-Heng Chen"
+  },
+  "locales": {
+    "en-US": {
+      "name": "FxOS LINE Fixer",
+      "description": "Fix LINE UI issue(s) in FxOS"
+    }
+  },
+  "default_locale": "en-US",
+  "package_path": "application.zip",
+  "role": "addon",
+  "type": "certified",
+  "customizations": [
+    {
+      "filter": "app://{",
+      "scripts": [
+        "main.js"
+      ]
+    }
+  ],
+  "icons": {
+    "128": "/icons/128.png"
+  }
+}

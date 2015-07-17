@@ -1,0 +1,11 @@
+{
+  "name": "fxos-line-fixer",
+  "description": "Fix LINE UI issues in FxOS",
+  "developer": {
+    "name": "Liang-Heng Chen"
+  },
+  "dependencies": {
+    "gulp": "*",
+    "gulp-zip": "*"
+  }
+}
