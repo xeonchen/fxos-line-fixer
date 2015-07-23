@@ -5,10 +5,10 @@
     'https://marketplace.firefox.com/app/' +
     '8bcde521-3e5b-4e0c-879d-26eccfa0b607/manifest.webapp';
 
-  function init() {
+  function fix() {
     var layer = document.getElementById('_wrap_profile_layer');
     if (!layer) {
-      window.setTimeout(init, 500);
+      window.setTimeout(fix, 500);
       return;
     }
 
@@ -17,9 +17,28 @@
     });
   }
 
-  navigator.mozApps.getSelf().onsuccess = function(e) {
-    if (e.target.result.manifestURL === LINE_MANIFEST) {
-      init();
+  function init() {
+    if (document.documentElement.dataset.lineFixer) {
+      return;
     }
-  };
+
+    navigator.mozApps.getSelf().onsuccess = function(e) {
+      if (document.documentElement.dataset.lineFixer) {
+        return;
+      }
+
+      if (e.target.result.manifestURL === LINE_MANIFEST) {
+        fix();
+      }
+
+      document.documentElement.dataset.lineFixer = true;
+    };
+  }
+
+  if (document.documentElement) {
+    init();
+  } else {
+    window.addEventListener('DOMContentLoaded', init);
+  }
+
 })();
