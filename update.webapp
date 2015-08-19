@@ -1,0 +1,8 @@
+{
+  "name": "fxos-line-fixer",
+  "description": "Fix LINE UI issue(s) in FxOS",
+  "developer": {
+    "name": "Liang-Heng Chen"
+  },
+  "package_path": "extension.zip",
+}

@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "fxos-line-fixer",
+  "description": "Fix LINE UI issue(s) in FxOS",
+  "version": "1.0",
+  "author": {
+    "name": "Liang-Heng Chen"
+  },
+  "content_scripts": [
+    {
+      "matches": "app://*",
+      "js": [
+        "main.js"
+      ]
+    }
+  ],
+  "icons": {
+    "128": "/icons/128.png"
+  }
+}
